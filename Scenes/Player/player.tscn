@@ -23,3 +23,17 @@ shape = SubResource("CapsuleShape3D_3mqfk")
 transform = Transform3D(1, 0, 0, 0, 0.934236, 0.356656, 0, -0.356656, 0.934236, 0, 3.62217, 6.24943)
 current = true
 fov = 60.0
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 81.0
+offset_bottom = 43.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 46
+text = "Score: 0"

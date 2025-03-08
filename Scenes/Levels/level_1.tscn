@@ -8,7 +8,7 @@
 
 [sub_resource type="Environment" id="Environment_cyadu"]
 background_mode = 1
-background_color = Color(0.788235, 0.827451, 0.882353, 1)
+background_color = Color(0.926534, 0.751587, 0.971173, 1)
 
 [node name="Main" type="Node3D"]
 

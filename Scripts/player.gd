@@ -11,6 +11,7 @@ var score: int = 0
 var facing_angle: float
 
 @onready var model: MeshInstance3D = get_node("Model")
+@onready var score_label: Label = $ScoreLabel
 
 #### private vars ####
 var _input
@@ -51,6 +52,7 @@ func game_over() -> void:
 
 func add_score(amount) -> void:
 	score += amount
+	score_label.text = str("Score: ", score)
 
 
 #### private ####
