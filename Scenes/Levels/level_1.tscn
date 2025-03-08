@@ -1,32 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4v7khqnec6su"]
+[gd_scene load_steps=5 format=3 uid="uid://c4v7khqnec6su"]
 
+[ext_resource type="PackedScene" uid="uid://c0opjf1lg0jkn" path="res://Scenes/Player/player.tscn" id="1_3mqfk"]
 [ext_resource type="PackedScene" uid="uid://dqxbi2kli1x48" path="res://Scenes/Platforms/platform_large.tscn" id="1_tlcug"]
-[ext_resource type="Script" uid="uid://b503afvtsem0j" path="res://Scripts/player.gd" id="2_3mqfk"]
-[ext_resource type="ArrayMesh" uid="uid://gjuyfsvj5gs0" path="res://Assets/Models/characterVampire.obj" id="2_4dpyx"]
+[ext_resource type="PackedScene" uid="uid://cquoomkfyma80" path="res://Scenes/Enemies/spikes.tscn" id="4_cyadu"]
 [ext_resource type="PackedScene" uid="uid://cdd6om83peefo" path="res://Scenes/Enemies/enemy.tscn" id="4_iixi8"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3mqfk"]
-radius = 0.3
-height = 1.2
 
 [node name="Main" type="Node3D"]
 
-[node name="Player" type="CharacterBody3D" parent="."]
-script = ExtResource("2_3mqfk")
-
-[node name="Model" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-mesh = ExtResource("2_4dpyx")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.630099, 0)
-shape = SubResource("CapsuleShape3D_3mqfk")
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.934236, 0.356656, 0, -0.356656, 0.934236, 0, 3.62217, 6.24943)
-current = true
-fov = 60.0
+[node name="Player" parent="." instance=ExtResource("1_3mqfk")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.681274, 0.548293, 0.485015, -0.651123, 0.151105, 0.743778, 0.33452, -0.822522, 0.459951, 0, 5.00145, 0)
@@ -63,3 +44,51 @@ transform = Transform3D(1, 0, 0, 0, 0.852266, -0.523109, 0, 0.523109, 0.852266, 
 [node name="Enemy" parent="Enemies" instance=ExtResource("4_iixi8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.63486, -0.91107, 0)
 move_dir = Vector3(0, 3, 0)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("4_iixi8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.42124, 0.610524, -3.42068)
+move_dir = Vector3(0, 0, -6)
+
+[node name="Spikes" type="Node" parent="."]
+
+[node name="spikes" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08443, 0, -0.677309)
+
+[node name="spikes2" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08443, 0.382035, -6.94015)
+
+[node name="spikes3" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.88615, 0.382035, -8.74997)
+
+[node name="spikes4" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.22583, 0.382035, -8.74997)
+
+[node name="spikes5" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.22583, 0.382035, -8.14126)
+
+[node name="spikes6" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.79298, 0.382035, -8.14126)
+
+[node name="spikes7" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60534, 0.382035, -7.26875)
+
+[node name="spikes8" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60534, 0.382035, -7.86552)
+
+[node name="spikes9" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97104, 0.382035, -7.86552)
+
+[node name="spikes10" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97104, 0.382035, -7.30635)
+
+[node name="spikes11" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524905, 0.382035, -8.73016)
+
+[node name="spikes12" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13959, 0.382035, -8.73016)
+
+[node name="spikes13" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13959, 0.382035, -8.17435)
+
+[node name="spikes14" parent="Spikes" instance=ExtResource("4_cyadu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.546213, 0.382035, -8.17435)

@@ -40,7 +40,11 @@ func _physics_process(delta: float) -> void:
 	_model_facing_angle()
 
 	if global_position.y < -5:
-		_game_over()
+		game_over()
+
+
+func game_over() -> void:
+	get_tree().call_deferred("reload_current_scene")
 
 
 #### private ####
@@ -51,7 +55,3 @@ func _model_facing_angle() -> void:
 
 	model.rotation.y = lerp_angle( \
 		model.rotation.y, facing_angle, rotation_speed)
-
-
-func _game_over() -> void:
-	get_tree().call_deferred("reload_current_scene")
