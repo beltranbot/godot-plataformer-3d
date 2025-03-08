@@ -6,6 +6,8 @@ var jump_force: float = 8.0
 var gravity: float = 20.0
 var rotation_speed: float = 0.5
 
+var score: int = 0
+
 var facing_angle: float
 
 @onready var model: MeshInstance3D = get_node("Model")
@@ -45,6 +47,10 @@ func _physics_process(delta: float) -> void:
 
 func game_over() -> void:
 	get_tree().call_deferred("reload_current_scene")
+
+
+func add_score(amount) -> void:
+	score += amount
 
 
 #### private ####

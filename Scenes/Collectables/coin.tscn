@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://carpobw5om7s1"]
+
+[ext_resource type="Script" uid="uid://dptbj1c154xlr" path="res://Scripts/coin.gd" id="1_kuwxe"]
+[ext_resource type="ArrayMesh" uid="uid://cge2fuclikg8j" path="res://Assets/Models/coinGold.obj" id="1_swf6p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kuwxe"]
+radius = 0.180731
+height = 0.421459
+
+[node name="Coin" type="Area3D"]
+script = ExtResource("1_kuwxe")
+
+[node name="CoinGold" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_swf6p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.222156, 0)
+shape = SubResource("CapsuleShape3D_kuwxe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
