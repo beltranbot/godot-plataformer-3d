@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdd6om83peefo"]
+
+[ext_resource type="ArrayMesh" uid="uid://mvd3ie23bw83" path="res://Assets/Models/spikeBlock.obj" id="1_613su"]
+[ext_resource type="Script" uid="uid://cousy44s1oafl" path="res://Scripts/enemy.gd" id="1_jcvw6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jcvw6"]
+size = Vector3(0.69458, 0.638947, 0.705139)
+
+[node name="Enemy" type="Area3D"]
+script = ExtResource("1_jcvw6")
+
+[node name="SpikeBlock" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_613su")
+skeleton = NodePath("../..")
+
+[node name="Model" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00305176, 0.473878, -0.00283813)
+shape = SubResource("BoxShape3D_jcvw6")
